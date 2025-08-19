@@ -14,14 +14,13 @@ This repository contains documentation for the Guppy programming language.
 Requirements:
 * The [just command runner](https://github.com/casey/just) 
 * Sphinx docs -> [uv](https://docs.astral.sh/uv/getting-started/installation/)
-* Landing page -> [npm and nodejs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 See the `devenv.nix` file.
 
 First clone the repository making sure to checkout the [guppylang](https://github.com/CQCL/guppylang) submodule.
 
 ```shell
-git clone git@github.com:quantinuum-dev/guppy-integration.git --recurse-submodules
+git clone git@github.com:CQCL/guppy-docs.git --recurse-submodules
 ```
 
 Alternatively you can update the submodules if you have already cloned the repository.
