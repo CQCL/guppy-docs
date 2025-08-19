@@ -1,2 +1,3 @@
 # Fine-tune GitHub's language detection
 sphinx/*.md linguist-detectable
+sphinx/*.rst linguist-detectable
