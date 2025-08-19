@@ -77,7 +77,7 @@ export default async function Home() {
         'Crucial protocols for Quantum Error Correction like magic state distillation require complex measurement dependent logic - Guppy expresses these naturally.',
       className: 'bg-gradient-to-b from-[#644F68] to-[#C42C4C]',
       image: 'magic.svg',
-      href: '/guppy/guppylang/examples/t_factory',
+      href: '/guppy/guppylang/examples/t_factory.html',
     },
     {
       title: 'Post-selection',
@@ -85,7 +85,7 @@ export default async function Home() {
         'Exit a shot when an error is detected without running any more operations.',
       className: 'bg-gradient-to-b from-[#3F8D82] to-[#699B31]',
       image: 'select.svg',
-      href: '/guppy/guppylang/examples/postselect',
+      href: '/guppy/guppylang/examples/postselect.html',
     },
     {
       title: 'N-qubit Graph States',
@@ -93,7 +93,7 @@ export default async function Home() {
         'Use Python metaprogramming and Guppy polymorphism to write scalable and type safe state preparation.',
       className: 'bg-gradient-to-b from-[#316278] to-[#3E9595]',
       image: 'qubit.svg',
-      href: '/guppy/guppylang/examples/ghz_and_graph',
+      href: '/guppy/guppylang/examples/ghz_and_graph.html',
     },
   ]
 
@@ -212,7 +212,7 @@ export default async function Home() {
           </div>
           <Link
             className="font-medium tracking-tight underline whitespace-nowrap text-muted-foreground"
-            href="/language_guide/language_guide_index"
+            href="/guppy/language_guide/language_guide_index"
           >
             Read Language Guide {'->'}
           </Link>
