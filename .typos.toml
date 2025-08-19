@@ -1,1 +1,1 @@
-files.extend-exclude = ["sphinx/guppylang/**", "v0.20"]
+files.extend-exclude = ["sphinx/guppylang/**"]
