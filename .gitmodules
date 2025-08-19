@@ -1,0 +1,4 @@
+[submodule "sphinx/guppylang"]
+	path = sphinx/guppylang
+	url = https://github.com/CQCL/guppylang.git
+	branch = main
