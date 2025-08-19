@@ -22,7 +22,7 @@ jobs:
             filters: |
               docs:
                 - 'sphinx/**'
-                - 'notebooks/**'
+                - 'guppylang/examples/**'
                 - '.github/**'
                 - 'pyproject.toml'
                 - 'uv.lock'
