@@ -1,0 +1,63 @@
+name: Test sphinx docs build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '**'
+  workflow_dispatch: {}
+jobs:
+    changes:
+        runs-on: ubuntu-latest
+        outputs:
+          changed_docs: ${{ steps.filter.outputs.docs }}
+        steps:
+        - uses: actions/checkout@v4
+        - uses: dorny/paths-filter@v3
+          id: filter
+          with:
+            base: ${{ github.ref }}
+            filters: |
+              docs:
+                - 'sphinx/**'
+                - 'notebooks/**'
+                - '.github/**'
+                - 'pyproject.toml'
+                - 'uv.lock'
+
+    test:
+      name: Test sphinx docs build
+      needs: changes
+      if: needs.changes.outputs.changed_docs == 'true'
+      runs-on: ubuntu-latest
+      env:
+          UV_EXTRA_INDEX_URL: "https://${{ secrets.QTNM_ARTIF_SW_READ_USER }}:${{ secrets.QTNM_ARTIF_SW_READ_TOKEN }}@quantinuumsw.jfrog.io/artifactory/api/pypi/pypi_local/simple"
+          UV_FROZEN: 1
+      steps:
+        - uses: actions/checkout@v4
+          with:
+            submodules: true
+
+        - uses: extractions/setup-just@v3
+          with:
+            just-version: '1.40.0'
+
+        - uses: actions/setup-node@v4
+          with:
+            node-version: '22'
+
+        - name: Install uv
+          uses: astral-sh/setup-uv@v5
+          with:
+              enable-cache: true
+              version: "0.6.6"
+
+        - name: Run the docs build
+          run: |
+            just build
+            # just coverage
+            just link-check
+
+
