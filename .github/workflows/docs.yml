@@ -1,4 +1,4 @@
-name: Test sphinx docs build
+name: Test sphinx docs and landing page build
 
 on:
   push:
@@ -11,26 +11,11 @@ on:
 jobs:
     changes:
         runs-on: ubuntu-latest
-        outputs:
-          changed_docs: ${{ steps.filter.outputs.docs }}
         steps:
         - uses: actions/checkout@v4
-        - uses: dorny/paths-filter@v3
-          id: filter
-          with:
-            base: ${{ github.ref }}
-            filters: |
-              docs:
-                - 'sphinx/**'
-                - 'guppylang/examples/**'
-                - '.github/**'
-                - 'pyproject.toml'
-                - 'uv.lock'
 
     test:
-      name: Test sphinx docs build
-      needs: changes
-      if: needs.changes.outputs.changed_docs == 'true'
+      name: Test sphinx docs and landing page build
       runs-on: ubuntu-latest
       env:
           UV_FROZEN: 1
@@ -53,7 +38,7 @@ jobs:
               enable-cache: true
               version: "0.6.6"
 
-        - name: Run the docs build
+        - name: Run the docs build (includes landing page)
           run: |
             just build
             # just coverage
