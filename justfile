@@ -32,4 +32,4 @@ cleanup:
     rm -rf sphinx/build
     rm -rf sphinx/api/generated
     rm -rf landing/out
-    rm -rf landing/build
+    rm -rf build
