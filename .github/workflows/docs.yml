@@ -33,7 +33,6 @@ jobs:
       if: needs.changes.outputs.changed_docs == 'true'
       runs-on: ubuntu-latest
       env:
-          UV_EXTRA_INDEX_URL: "https://${{ secrets.QTNM_ARTIF_SW_READ_USER }}:${{ secrets.QTNM_ARTIF_SW_READ_TOKEN }}@quantinuumsw.jfrog.io/artifactory/api/pypi/pypi_local/simple"
           UV_FROZEN: 1
       steps:
         - uses: actions/checkout@v4
