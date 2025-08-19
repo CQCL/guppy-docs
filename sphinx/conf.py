@@ -1,7 +1,6 @@
 r"""Configuration file for the Sphinx documentation builder."""
 
 import os
-
 import guppylang
 
 
@@ -19,7 +18,6 @@ html_copy_source = False
 html_logo = "_static/guppy_icon_only.svg"
 
 html_static_path = ["_static"]
-html_extra_path = ["assets"]
 templates_path = ["_templates"]
 
 master_doc = "index"
