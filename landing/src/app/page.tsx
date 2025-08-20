@@ -66,7 +66,7 @@ def repeat_until_success(q: qubit, attempts: int) -> bool:
         if not (measure(h(a)) | measure(h(b))):
             result("rus_attempts", i)
             return True
-        return False
+    return False
 repeat_until_success.check() # type check`
 
 export default async function Home() {
