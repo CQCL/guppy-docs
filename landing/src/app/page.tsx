@@ -265,7 +265,7 @@ export default async function Home() {
           </div>
           <Link
             className="font-medium tracking-tight underline whitespace-nowrap text-muted-foreground"
-            href="guppy/examples_index.html"
+            href="/guppy/examples_index.html"
           >
             More Examples {'->'}
           </Link>
