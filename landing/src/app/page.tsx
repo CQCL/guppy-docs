@@ -212,7 +212,7 @@ export default async function Home() {
           </div>
           <Link
             className="font-medium tracking-tight underline whitespace-nowrap text-muted-foreground"
-            href="/guppy/language_guide/language_guide_index"
+            href="/guppy/language_guide/language_guide_index.html"
           >
             Read Language Guide {'->'}
           </Link>
@@ -265,7 +265,7 @@ export default async function Home() {
           </div>
           <Link
             className="font-medium tracking-tight underline whitespace-nowrap text-muted-foreground"
-            href="/examples_index.html"
+            href="guppy/examples_index.html"
           >
             More Examples {'->'}
           </Link>
