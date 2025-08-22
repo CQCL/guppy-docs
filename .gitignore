@@ -1,0 +1,31 @@
+# Devenv
+.devenv*
+devenv.local.nix
+*.egg-info
+.venv
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+
+.DS_Store
+.ipynb_checkpoints
+wheel/*
+
+*.o
+*.so
+*.dylib
+*.bc
+*.x
+*.pyc
+
+**/node_modules
+
+# docs
+sphinx/api/generated
+sphinx/jupyter_execute
+sphinx/.jupyter_cache
+sphinx/build
+build
+/.envrc
