@@ -53,9 +53,9 @@ Loading pytket circuits works by converting the pytket circuit to a HUGR functio
 the hood. Guppy also compiles to HUGR meaning effectively we get a pre-compiled Guppy
 function we can call.
 
-Quantum operations in HUGR are defined in _extensions_. Most operations in the Guppy [``std.quantum``][quan-std] and
-[``std.qsystem``][qsys-std] modules map directly to the HUGR extensions [``tket.quantum``][quan-ext] and
-[``tket.qsystem``][qsys-ext]. When loading pytket circuits, pytket ``OpTypes`` that match to those
+Quantum operations in HUGR are defined in _extensions_. Most operations in the Guppy [std.quantum][quan-std] and
+[std.qsystem][qsys-std] modules map directly to the HUGR extensions [tket.quantum][quan-ext] and
+[tket.qsystem][qsys-ext]. When loading pytket circuits, pytket ``OpTypes`` that match to those
 extension operations are loaded directly.
 All of the operations supported by pytket can be found in the pytket [OpType](inv:pytket#optype) documentation.
 
@@ -64,9 +64,9 @@ to be successful. However, such opaque operations cannot be emulated or submitte
 
 In the code snippet below we will construct a circuit for performing a two-qubit unitary operation which we will specify as a numpy array. This unitary box is not natively supported.
 
-[qsys-ext]: https://github.com/CQCL/tket2/blob/b0103930a4b47ecc457e8a0e023e131955c553bd/tket-qsystem/src/extension/qsystem.rs\#L88
+[qsys-ext]: https://github.com/CQCL/tket2/blob/b0103930a4b47ecc457e8a0e023e131955c553bd/tket-qsystem/src/extension/qsystem.rs
 
-[quan-ext]: https://github.com/CQCL/tket2/blob/b0103930a4b47ecc457e8a0e023e131955c553bd/tket/src/ops.rs\#L43
+[quan-ext]: https://github.com/CQCL/tket2/blob/b0103930a4b47ecc457e8a0e023e131955c553bd/tket/src/ops.rs
 
 [qsys-std]: api/generated/guppylang.std.qsystem.rst
 [quan-std]: api/generated/guppylang.std.quantum.rst
