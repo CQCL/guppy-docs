@@ -49,11 +49,27 @@ If we want the function to take two separate qubit arguments, we can specify `us
 
 ### How to deal with operations unsupported by Guppy
 
-All of the quantum operations supported by Guppy are listed in the [quantum](api/generated/guppylang.std.quantum.rst) and [qsystem](api/generated/guppylang.std.qsystem.rst) modules. At present this gate set is more limited than the set of supported pytket operations. All of the operations supported by pytket can be found in the pytket [OpType](inv:pytket#optype) documentation.
+Loading pytket circuits works by converting the pytket circuit to a HUGR function under
+the hood. Guppy also compiles to HUGR meaning effectively we get a pre-compiled Guppy
+function we can call.
 
-If we try to load a pytket circuit with operations which are not in the `quantum` or `qsystem` modules
- we would not be able to load the circuit as a guppy function and compile it. 
- In the code snippet below we will construct a circuit for performing a two-qubit unitary operation which we will specify as a numpy array. This unitary box is not natively supported in Guppy.
+Quantum operations in HUGR are defined in _extensions_. Most operations in the Guppy [``std.quantum``][quan-std] and
+[``std.qsystem``][qsys-std] modules map directly to the HUGR extensions [``tket.quantum``][quan-ext] and
+[``tket.qsystem``][qsys-ext]. When loading pytket circuits, pytket ``OpTypes`` that match to those
+extension operations are loaded directly.
+All of the operations supported by pytket can be found in the pytket [OpType](inv:pytket#optype) documentation.
+
+Unsupported pytket operations are loaded as opaque, which allows a round-trip conversion
+to be successful. However, such opaque operations cannot be emulated or submitted to devices.
+
+In the code snippet below we will construct a circuit for performing a two-qubit unitary operation which we will specify as a numpy array. This unitary box is not natively supported.
+
+[qsys-ext]: https://github.com/CQCL/tket2/blob/b0103930a4b47ecc457e8a0e023e131955c553bd/tket-qsystem/src/extension/qsystem.rs\#L88
+
+[quan-ext]: https://github.com/CQCL/tket2/blob/b0103930a4b47ecc457e8a0e023e131955c553bd/tket/src/ops.rs\#L43
+
+[qsys-std]: api/generated/guppylang.std.qsystem.rst
+[quan-std]: api/generated/guppylang.std.quantum.rst
 
 ```{code-cell} ipython3
 import numpy as np
@@ -78,7 +94,7 @@ pytket_circ.add_gate(OpType.CnY, [0, 1, 2])
 guppy_func = guppy.load_pytket("circuit_func", pytket_circ)
 ```
 
-Treating unknown optypes as opaque operations allows for round trip conversion between compiled Guppy programs and circuits. However we will get an error if we try to invoke the Selene emulator as it cannot execute the opaque op.
+We will get an error if we try to invoke the Selene emulator as it cannot execute the opaque op.
 
 ```{code-cell} ipython3
 ---
@@ -88,7 +104,9 @@ tags: [raises-exception]
 sim_result = guppy_func.emulator(n_qubits=3).with_seed(2).run()
 ```
 
-The solution to handling operations which are not directly supported in Guppy is to decompose these unsupported operations into gates from [quantum](api/generated/guppylang.std.quantum.rst) and [qsystem](api/generated/guppylang.std.qsystem.rst) before loading the circuit. This can be readily done with the `AutoRebase` pass from pytket.
+The solution to handling operations which are not directly supported is to decompose
+these unsupported operations into gates from the supported extensions before loading the circuit. This can
+be readily done with the `AutoRebase` pass from pytket.
 
 ```{code-cell} ipython3
 from pytket.passes import AutoRebase, DecomposeBoxes
