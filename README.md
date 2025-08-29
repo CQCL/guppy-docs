@@ -9,7 +9,7 @@ This repository contains documentation for the Guppy programming language.
 * FAQs, changelog and migration guides
 * The guppylang [example notebooks](https://github.com/CQCL/guppylang/tree/main/examples) (included via the guppylang submodule)
 
-The Sphinx docs are written in MyST markdown and rendered with the [myst-nb](https://myst-nb.readthedocs.io/en/latest/) library. This variant of markdown supports code cells which are executed at docs build time. See the section on [text-based notebooks](https://myst-nb.readthedocs.io/en/latest/authoring/basics.html#text-based-notebooks). The docs use the [quantinuum-sphinx](https://github.com/CQCL/quantinuum-sphinx) theme.
+The Sphinx docs are written in MyST markdown and rendered with the [myst-nb](https://myst-nb.readthedocs.io/en/latest/) library. This variant of markdown supports code cells which are executed at docs build time. See the section on [text-based notebooks](https://myst-nb.readthedocs.io/en/latest/authoring/basics.html#text-based-notebooks). The docs are styled with the [quantinuum-sphinx](https://github.com/CQCL/quantinuum-sphinx) theme.
 
 For information on how the landing page is built, see the [landing page README](https://github.com/CQCL/guppy-docs/blob/main/landing/README.md).
 
