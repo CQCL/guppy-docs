@@ -19,8 +19,8 @@ The following checks are run when a pull request is opened.
 
 * Spell checking - spell checking is done using the [typos crate](https://github.com/crate-ci/typos).
 * The sphinx docs build is tested. This includes all code snippets and example notebooks. If a code snippet throws an error, this will fail the docs build.
-* Link checking - All links in the `sphinx` directory are tested. Broken links will cause the C.I. checks to fail.
-* (currently disabled) Sphinx coverage checks - check that all of the public guppylang API is documented.
+* Link checking (using the [sphinx-linkcheck builder](https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder)) - All links in the `sphinx` directory are tested. Broken links will cause the C.I. checks to fail.
+* (currently disabled) Sphinx coverage checks using [sphinx.ext.coverage](https://www.sphinx-doc.org/en/master/usage/extensions/coverage.html) - check that all of the public guppylang API is documented.
 
 ## Building the docs locally
 
