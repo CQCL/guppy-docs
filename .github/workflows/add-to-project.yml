@@ -10,4 +10,4 @@ jobs:
         with:
             project-url: https://github.com/orgs/quantinuum-dev/projects/10
         secrets:
-            GITHUB_PAT: ${{ secrets.HUGRBOT_PAT }}
+            GITHUB_PAT: ${{ secrets.PROJECT_TOKEN }}
