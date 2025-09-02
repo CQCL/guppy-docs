@@ -225,7 +225,7 @@ def f(x: int) -> None:
     pass
 
 @guppy
-def apply_f(xs: array[int, m] @ owned) -> array[int, m]:
+def apply_f(xs: array[int, m] @owned) -> array[int, m]:
     for x in xs:
         f(x)
     return xs
@@ -236,7 +236,7 @@ Explicit copying can come in handy here, if it is possible to do with the array 
 
 ```{code-cell} ipython3
 @guppy
-def apply_f(xs: array[int, m] @ owned) -> array[int, m]:
+def apply_f(xs: array[int, m] @owned) -> array[int, m]:
     for x in xs.copy():
         f(x)
     return xs
