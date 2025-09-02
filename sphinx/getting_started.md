@@ -37,7 +37,7 @@ from guppylang.std.quantum import cx, h, measure, qubit, x, z
 
 
 @guppy
-def teleport(src: qubit @ owned, tgt: qubit) -> None:
+def teleport(src: qubit @owned, tgt: qubit) -> None:
     """Teleports the state in `src` to `tgt`."""
     # Create ancilla and entangle it with src and tgt
     tmp = qubit()
@@ -82,5 +82,3 @@ list(sim_result.results)
 ```
 
 To see more examples of Guppy programs, take a look at the [Examples Gallery](examples_index.md).
-
-

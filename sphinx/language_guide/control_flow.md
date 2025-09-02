@@ -18,7 +18,7 @@ from guppylang.std.quantum import qubit, measure
 from guppylang.std.builtins import owned
 
 @guppy
-def outcome_message(q: qubit @ owned) -> str:
+def outcome_message(q: qubit @owned) -> str:
     if measure(q):
         return "Measured 1!"
     else:
