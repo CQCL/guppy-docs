@@ -27,6 +27,7 @@ The following checks are run when a pull request is opened.
 Requirements:
 * The [just command runner](https://github.com/casey/just) 
 * Sphinx docs -> [uv](https://docs.astral.sh/uv/getting-started/installation/)
+* Node and npm
 
 See the `devenv.nix` file.
 
