@@ -12,6 +12,8 @@
 
     .. automethod:: __call__
     .. automethod:: compile
+    .. automethod:: compile_function
+    .. automethod:: compile_entrypoint
     .. automethod:: check
     .. automethod:: emulator 
 
@@ -22,4 +24,6 @@
     .. automethod:: check
     .. automethod:: __eq__
     .. automethod:: __getattr__
+
+.. autoexception:: EntrypointArgsError
 ```
