@@ -787,7 +787,7 @@ docs = [
 
 [package.metadata]
 requires-dist = [
-    { name = "guppylang", specifier = "~=0.21.4" },
+    { name = "guppylang", specifier = "~=0.21.5" },
     { name = "jupyter", specifier = ">=1.1.0" },
     { name = "matplotlib", specifier = ">=3.9.2" },
     { name = "networkx", specifier = ">=3.4.2" },
@@ -814,7 +814,7 @@ docs = [
 
 [[package]]
 name = "guppylang"
-version = "0.21.4"
+version = "0.21.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "guppylang-internals" },
@@ -825,9 +825,9 @@ dependencies = [
     { name = "tqdm" },
     { name = "types-tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/11/49/10a70bbee2b722ddb349945ba4e40f6ad1dd5fd78cd307c6771b23b817ec/guppylang-0.21.4.tar.gz", hash = "sha256:80cb3ebc392616e1a15b00ede027129306abc7b1cdecbc01396012e7fda5a023", size = 59070, upload-time = "2025-09-19T15:48:11.491Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f9/dd/b9b09f73493311a958aecfb1a16fe0bf818e46c0453f9a82987e302eb390/guppylang-0.21.5.tar.gz", hash = "sha256:7625f28363383d6973fcf03dfcd06da39cd198e4a3815eb6f1ad1b8e5f32f8a1", size = 59932, upload-time = "2025-09-22T14:34:16.359Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/49/f1/46033832c80053ab970743c171c4e08a5a075f8b645e67d68f7f8fde4961/guppylang-0.21.4-py3-none-any.whl", hash = "sha256:c95cec0526b89293d9abc5381645c3ba68401fce5897a5c5cde6e4deb39725ce", size = 57210, upload-time = "2025-09-19T15:48:09.86Z" },
+    { url = "https://files.pythonhosted.org/packages/e6/ce/2115058f4bf157881145004816bdbf545769f769d45911b3dfbf13733091/guppylang-0.21.5-py3-none-any.whl", hash = "sha256:d46796813e9c04137e2e3d0a1513f292689351da2bddd0b277d3123873934b9c", size = 57947, upload-time = "2025-09-22T14:34:15.167Z" },
 ]
 
 [[package]]
