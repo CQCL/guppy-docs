@@ -17,7 +17,10 @@ Guppy is a compiled language which distinguishes it from Python. The user writes
 
 ## Loading pytket circuit as Guppy functions
 
-A pytket [Circuit](inv:pytket#circuit_class) instance can be invoked as a Guppy function using the `guppy.load_pytket` method. This feature can be useful for making use of existing pytket circuits directly in Guppy without having to rewrite code from scratch. In the near term, it is also useful to synthesize circuits (e.g. state preparation, permutations) using pytket's higher level "box" constructs. These synthesized circuits can the be invoked as Guppy functions.
+
+[load_pytket_docs]: https://docs.quantinuum.com/guppy/api/decorator.html#guppylang.decorator.guppy.load_pytket
+
+A pytket [Circuit](inv:pytket#circuit_class) instance can be invoked as a Guppy function using the [guppy.load_pytket][load_pytket_docs] method. This feature can be useful for making use of existing pytket circuits directly in Guppy without having to rewrite code from scratch. In the near term, it is also useful to synthesize circuits (e.g. state preparation, permutations) using pytket's higher level "box" constructs. These synthesized circuits can the be invoked as Guppy functions.
 
 ### Basic Example
 
@@ -43,8 +46,8 @@ qft_func = guppy.load_pytket("qft_func", qft2_circ)
 
 We now have a Guppy function called `qft_func` which we can compile or use as a subroutine in other functions.
 
-Note that by default `guppy.load_pytket` will create Guppy functions which use arrays of qubits as inputs. This means that our `qft_func` above will have take an array of two qubits as input. 
-If we want the function to take two separate qubit arguments, we can specify `use_arrays=False` in `guppy.load_pytket`. Also note that by default, circuits with separate quantum registers become Guppy functions that take multiple arrays of qubits as input. 
+Note that by default [guppy.load_pytket][load_pytket_docs] will create Guppy functions which use arrays of qubits as inputs. This means that our `qft_func` above will have take an array of two qubits as input. 
+If we want the function to take two separate qubit arguments, we can specify `use_arrays=False` in [guppy.load_pytket][load_pytket_docs]. Also note that by default, circuits with separate quantum registers become Guppy functions that take multiple arrays of qubits as input. 
 
 
 ### How to deal with operations unsupported by Guppy
@@ -107,7 +110,7 @@ def guppy_func() -> None:
   discard_array(qs)
 ```
 
-We will get an error if we try to invoke the Selene emulator as it cannot execute the opaque op defining the `Unitary2qBox` in the call to `circuit_func`.
+We will get an error if we try to invoke the Selene emulator as it cannot execute the opaque op defining the {py:class}`~pytket.circuit.Unitary2qBox` in the call to `circuit_func`.
 
 ```{code-cell} ipython3
 ---
@@ -119,7 +122,7 @@ sim_result = guppy_func.emulator(n_qubits=3).with_seed(2).run()
 
 The solution to handling operations which are not directly supported is to decompose
 these unsupported operations into gates from the supported extensions before loading the circuit. This can
-be readily done with the `AutoRebase` pass from pytket.
+be readily done with the {py:class}`~pytket.passes.AutoRebase` pass from pytket.
 
 ```{code-cell} ipython3
 from pytket.passes import AutoRebase, DecomposeBoxes
@@ -142,7 +145,7 @@ The pytket library contains many [compilation passes](https://docs.quantinuum.co
 
 As of August 2025, optimization of compiled Guppy programs is still at an early stage. When using `guppy.emulator()` the quantum program is converted to the [qsystem native instructions](api/generated/guppylang.std.qsystem.rst) with no further optimization. In the near term, it is planned to optimize regions of these programs with the kind of compiler passes that are already available in pytket using an updated version of the TKET compiler.  
 
-If you want to optimize your quantum program using pytket, you can create a pytket circuit and optimize it. This optimized program can then be loaded as a Guppy function by using `guppy.load_pytket`.
+If you want to optimize your quantum program using pytket, you can create a pytket circuit and optimize it. This optimized program can then be loaded as a Guppy function by using [guppy.load_pytket][load_pytket_docs].
 
 ## Execution of quantum programs
 
