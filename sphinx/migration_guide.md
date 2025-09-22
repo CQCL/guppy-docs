@@ -91,10 +91,23 @@ pytket_circ.add_gate(G_box, [0, 1])
 pytket_circ.CCX(0, 1, 2)
 pytket_circ.add_gate(OpType.CnY, [0, 1, 2])
 
-guppy_func = guppy.load_pytket("circuit_func", pytket_circ)
+# Load pytket circuit as a Guppy function.
+circuit_func = guppy.load_pytket("circuit_func", pytket_circ)
 ```
 
-We will get an error if we try to invoke the Selene emulator as it cannot execute the opaque op.
+We now have a Guppy function that takes three qubits as input. As this function has inputs, it cannot be an entrypoint to an executable program. We therefore have to call `circuit_func` inside a Guppy function which takes no arguments and allocates some qubits for it to use.
+
+```{code-cell} ipython3
+from guppylang.std.quantum import discard_array
+
+@guppy
+def guppy_func() -> None:
+  qs = array(qubit() for _ in range(3))
+  circuit_func(qs)
+  discard_array(qs)
+```
+
+We will get an error if we try to invoke the Selene emulator as it cannot execute the opaque op defining the `Unitary2qBox` in the call to `circuit_func`.
 
 ```{code-cell} ipython3
 ---
@@ -118,10 +131,10 @@ DecomposeBoxes().apply(pytket_circ) # Decompose the Unitary2qBox to primitive ga
 rebase_pass.apply(pytket_circ) # Convert all gates in pytket_circ to {H, Rz, CX}
 
 # Load rebased circuit as a Guppy function
-guppy_func = guppy.load_pytket("guppy_func", pytket_circ)
+new_circuit_func = guppy.load_pytket("guppy_func", pytket_circ)
 ```
 
-Now our compiled Guppy program should contain no opaque operations and is executable on the emulator.
+Now our compiled Guppy program should contain no opaque operations and is executable on the emulator when called inside `guppy_func`.
 
 ## Compilation and optimization of quantum programs
 
