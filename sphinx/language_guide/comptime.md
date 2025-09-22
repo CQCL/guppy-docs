@@ -11,7 +11,7 @@ kernelspec:
 When writing Guppy code, it's important to understand when different parts of our program are executed. We distinguish between two key stages:
 
 - **Compile-time** refers to everything that happens on our local machine before submitting the program to an emulator or quantum device.
-  This includes the work the Guppy compiler does when calling ``guppy.compile()``, but also any other Python code that is run along-side.
+  This includes the work the Guppy compiler does when calling ``guppy.compile_function()``, but also any other Python code that is run along-side.
 
 - **Run-time** refers to anything happening on the quantum device or emulator in real-time, i.e. within qubit coherence times.
 
@@ -27,7 +27,7 @@ from guppylang.std.quantum import qubit, rz, discard
 def divide_by_zero(q: qubit) -> None:
     rz(q, pi / 0)  # Divide by zero!
 
-divide_by_zero.compile();  # Compilation succeeds
+divide_by_zero.compile_function();  # Compilation succeeds
 ```
 
 Compilation succeeds since the division by zero is not executed at compile-time.
@@ -87,7 +87,7 @@ As expected, the exception will now be triggered at compile-time instead of run-
 ---
 tags: [raises-exception]
 ---
-divide_by_zero.compile();  # Division by zero is triggered here
+divide_by_zero.compile_function();  # Division by zero is triggered here
 ```
 
 ### Use case: parameterising programs
@@ -110,7 +110,7 @@ def apply_edges(qs: array[qubit, 20]) -> None:
     for i, j in comptime(list(g.edges)):
         cz(qs[i], qs[j])
 
-apply_edges.compile();
+apply_edges.compile_function();
 ```
 
 Note that ``comptime`` expressions must evaluate to types that are compatible with Guppy, for example numbers, tuples, or lists thereof.
@@ -127,7 +127,7 @@ def apply_edges(qs: array[qubit, 20]) -> None:
     for i, j in comptime(g.edges):
         cz(qs[i], qs[j])
 
-apply_edges.compile();  # Compilation fails
+apply_edges.compile_function();  # Compilation fails
 ```
 
 ### Use case: type-level comptime expressions
@@ -149,7 +149,7 @@ def plus_state() -> array[qubit, comptime(N + 1)]:
         h(qs[i])
     return qs
 
-plus_state.compile();
+plus_state.compile_function();
 ```
 
 
@@ -171,7 +171,7 @@ However, those restrictions no longer apply inside ``comptime`` functions.
 
 Let's see what happens when we compile the `ladder` function.
 ```{code-cell} ipython3
-ladder.compile();
+ladder.compile_function();
 ```
 As we can see, the ``print`` statement is executed at compile-time.
 We get 9 printed lines, highlighting that the ``for`` loop is compile-time evaluated as well.
@@ -231,7 +231,7 @@ def dynamic_branch() -> int:
     else:
         return 1
 
-dynamic_branch.compile();  # Compilation fails
+dynamic_branch.compile_function();  # Compilation fails
 ```
 
 Naturally, we don't know measurement outcomes at compile-time, so we cannot branch on them inside ``comptime`` functions.
@@ -248,7 +248,7 @@ def dynamic_branch(x: int) -> int:
     else:
         return 1
 
-dynamic_branch.compile();  # Compilation fails
+dynamic_branch.compile_function();  # Compilation fails
 ```
 
 This kind of dynamic branching is only possible in regular Guppy functions, not in a ``comptime`` context.
@@ -267,7 +267,7 @@ def foo() -> array[bool, 10]:
     qs = [qubit() for _ in range(10)]
     return measure_array(qs)
 
-foo.compile();
+foo.compile_function();
 ```
 
 In fact, in the ``comptime`` context, arrays are identical to Python lists:
@@ -279,7 +279,7 @@ def bar(qs: array[qubit, 10]) -> None:
     xs = array(1, 2, 3)
     assert isinstance(xs, list)
 
-bar.compile();
+bar.compile_function();
 ```
 
 The only restriction is that all elements should have the same type:
@@ -293,7 +293,7 @@ def array_mismatch(x: int) -> int:
     qs = array(qubit(), qubit(), 42)  # Try to create heterogeneous arrays
     measure_array(qs)
 
-array_mismatch.compile();  # Compilation fails
+array_mismatch.compile_function();  # Compilation fails
 ```
 
 ### Type checking and safety
@@ -309,7 +309,7 @@ tags: [raises-exception]
 def bad(q: qubit) -> None:
     cx(q, 0)
 
-bad.compile();  # Compilation fails
+bad.compile_function();  # Compilation fails
 ```
 
 We also ensure that qubits are not used twice, even if they are aliased:
@@ -323,7 +323,7 @@ def bad(q: qubit) -> None:
     r = q     # Alias q as r
     cx(q, r)  # Apply CX on the same qubit
 
-bad.compile();  # Compilation fails
+bad.compile_function();  # Compilation fails
 ```
 
 Finally, allocated qubits may not be implicitly dropped:
@@ -338,7 +338,7 @@ def bad(q: qubit) -> None:
     h(tmp)
     cx(tmp, q)
 
-bad.compile();  # Compilation fails
+bad.compile_function();  # Compilation fails
 ```
 
 
@@ -369,7 +369,7 @@ def apply_gates(q: qubit) -> None:
             case "S":
                 s(q)
 
-apply_gates.compile();
+apply_gates.compile_function();
 ```
 
 After compilation, the resulting program will be exactly the same as if we had just written
