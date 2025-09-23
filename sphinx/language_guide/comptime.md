@@ -15,6 +15,10 @@ When writing Guppy code, it's important to understand when different parts of ou
 
 - **Run-time** refers to anything happening on the quantum device or emulator in real-time, i.e. within qubit coherence times.
 
+```{note}
+Note that Guppy comptime code is only checked upon calling the `.compile()` method. For comptime functions, the `.check()` method is not available. 
+```
+
 The general rule is that any code annotated with ``@guppy`` will be executed at *run-time*.
 For example, consider the following program:
 
