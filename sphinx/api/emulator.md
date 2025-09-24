@@ -17,4 +17,5 @@
     PartialVector
     PartialState
     TracedState
+    exceptions.EmulatorError
 ```

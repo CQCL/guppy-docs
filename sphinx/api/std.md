@@ -32,4 +32,5 @@ Standard library builtins are to be used within Guppy [functions](../language_gu
     quantum_functional
     reflection
     string
+    err
 ```
