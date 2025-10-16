@@ -17,7 +17,7 @@ const featureConfig = [
       'The guppylang compiler uses a powerful but unobtrusive type system to provide helpful error messages.',
   },
   {
-    title: 'Linear Qubits',
+    title: 'Qubit Safety',
     description:
       'Qubits have a linear type, following an intuitive ownership model that prevents no-cloning errors and memory leaks.',
   },
