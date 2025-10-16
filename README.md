@@ -13,6 +13,13 @@ The Sphinx docs are written in MyST markdown and rendered with the [myst-nb](htt
 
 For information on how the landing page is built, see the [landing page README](https://github.com/CQCL/guppy-docs/blob/main/landing/README.md).
 
+## Updating the docs for a new Guppy release
+
+1. Update the `pyproject.toml` in this repository, run `uv sync` to update `uv.lock`.
+2. Run `just coverage` to check the API docs coverage. Document any undocumented classes or functions. 
+3. Bump the `guppylang` submodule in this repository to the latest release tag (this submodule is only used for example notebooks).
+4. Update the central website build repository.
+
 ## Testing in C.I.
 
 The following checks are run when a pull request is opened.
