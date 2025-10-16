@@ -15,9 +15,10 @@ For information on how the landing page is built, see the [landing page README](
 
 ## Updating the docs for a new Guppy release
 
-1. Update the `pyproject.toml` in this repository.
-2. Bump the `guppylang` submodule in this repository to the latest release tag (this submodule is only used for example noteboks).
-3. Update the central website build repository.
+1. Update the `pyproject.toml` in this repository, run `uv sync` to update `uv.lock`.
+2. Run `just coverage` to check whether there are any undocumented classes or functions. 
+3. Bump the `guppylang` submodule in this repository to the latest release tag (this submodule is only used for example noteboks).
+4. Update the central website build repository.
 
 ## Testing in C.I.
 
