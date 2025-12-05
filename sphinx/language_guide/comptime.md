@@ -193,7 +193,7 @@ def foo(q: qubit, theta: angle) -> None:
 ```
 
 While ``1 + 1`` can be evaluated at compile-time, the ``theta *= ...`` part cannot.
-This is because ``theta`` is a run-time function argument, so its value it not known compile-time.
+This is because ``theta`` is a run-time function argument, so its value it not known at compile-time.
 The actual doubling of the angle must be delayed until run-time.
 
 ```{note}
