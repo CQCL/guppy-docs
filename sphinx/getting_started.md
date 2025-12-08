@@ -18,9 +18,9 @@ pip install guppylang
 
 Guppy can be used with Python versions 3.10, 3.11, 3.12 and 3.13. The MacOS, Linux and Windows operating systems are supported.
 
-The source code for Guppy can be found in a public repository on [github](https://github.com/CQCL/guppylang). If you have a feature request or think you have found a bug, feel free to raise a [github issue](https://github.com/CQCL/guppylang/issues).
+The source code for Guppy can be found in a public repository on [github](https://github.com/quantinuum/guppylang). If you have a feature request or think you have found a bug, feel free to raise a [github issue](https://github.com/quantinuum/guppylang/issues).
 
-Guppy programs can be executed on the [Selene](https://github.com/CQCL/selene) emulator. As of the v0.21 release, Selene is now included with `guppylang` and powers the [guppylang.emulator](../sphinx/api/emulator.md) module under the hood.
+Guppy programs can be executed on the [Selene](https://github.com/quantinuum/selene) emulator. As of the v0.21 release, Selene is now included with `guppylang` and powers the [guppylang.emulator](../sphinx/api/emulator.md) module under the hood.
 
 ## Example: Quantum Teleportation
 

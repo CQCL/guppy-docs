@@ -67,9 +67,9 @@ to be successful. However, such opaque operations cannot be emulated or submitte
 
 In the code snippet below we will construct a circuit for performing a two-qubit unitary operation which we will specify as a numpy array. This unitary box is not natively supported.
 
-[qsys-ext]: https://github.com/CQCL/tket2/blob/b0103930a4b47ecc457e8a0e023e131955c553bd/tket-qsystem/src/extension/qsystem.rs
+[qsys-ext]: https://github.com/quantinuum/tket2/blob/b0103930a4b47ecc457e8a0e023e131955c553bd/tket-qsystem/src/extension/qsystem.rs
 
-[quan-ext]: https://github.com/CQCL/tket2/blob/b0103930a4b47ecc457e8a0e023e131955c553bd/tket/src/ops.rs
+[quan-ext]: https://github.com/quantinuum/tket2/blob/b0103930a4b47ecc457e8a0e023e131955c553bd/tket/src/ops.rs
 
 [qsys-std]: api/generated/guppylang.std.qsystem.rst
 [quan-std]: api/generated/guppylang.std.quantum.rst
@@ -149,10 +149,10 @@ If you want to optimize your quantum program using pytket, you can create a pytk
 
 ## Execution of quantum programs
 
-The Guppy language comes with a built in [emulator](api/emulator.md) module built on top of [Selene](https://github.com/CQCL/selene) for the execution of quantum programs. This emulator can execute compiled Guppy programs which include control flow and constructs from the standard library. There are two simulation modes available namely stabilizer and statevector which are provided via the Stim and QuEST backends respectively. Selene also supports [statevector output](guppylang/examples/state_results.ipynb) for testing and debugging. 
+The Guppy language comes with a built in [emulator](api/emulator.md) module built on top of [Selene](https://github.com/quantinuum/selene) for the execution of quantum programs. This emulator can execute compiled Guppy programs which include control flow and constructs from the standard library. There are two simulation modes available namely stabilizer and statevector which are provided via the Stim and QuEST backends respectively. Selene also supports [statevector output](guppylang/examples/state_results.ipynb) for testing and debugging. 
 
 For more information on the Selene emulator see the [Selene documentation](https://docs.quantinuum.com/selene).
 
 ## Footnotes 
 
-[^1]: Guppy programs are compiled to [HUGR](https://github.com/cqcl/hugr) which is a new intermediate representation of quantum programs.
+[^1]: Guppy programs are compiled to [HUGR](https://github.com/quantinuum/hugr) which is a new intermediate representation of quantum programs.

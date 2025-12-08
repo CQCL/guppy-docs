@@ -6,7 +6,7 @@ on:
 
 jobs:
     add-to-project:
-        uses: CQCL/hugrverse-actions/.github/workflows/add-to-project.yml@main
+        uses: quantinuum/hugrverse-actions/.github/workflows/add-to-project.yml@main
         with:
             project-url: https://github.com/orgs/quantinuum-dev/projects/10
         secrets:

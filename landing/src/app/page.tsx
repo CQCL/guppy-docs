@@ -1,5 +1,5 @@
 import { CodeSnippet } from './code_snippet'
-import { DocsFooter, DocsNavBar } from '@cqcl/quantinuum-ui'
+import { DocsFooter, DocsNavBar } from '@quantinuum/quantinuum-ui'
 import { Button, Separator } from '@quantinuum/quantinuum-ui'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
@@ -285,8 +285,8 @@ export default async function Home() {
           </div>
           <div className="flex flex-col gap-4">
             {[
-              { title: 'guppylang', href: 'https://github.com/CQCL/guppylang' },
-              { title: 'hugr', href: 'https://github.com/CQCL/hugr' },
+              { title: 'guppylang', href: 'https://github.com/quantinuum/guppylang' },
+              { title: 'hugr', href: 'https://github.com/quantinuum/hugr' },
             ].map((item) => {
               return (
                 <Link
