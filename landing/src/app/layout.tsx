@@ -1,5 +1,5 @@
 import './globals.css'
-import '@cqcl/quantinuum-ui/tokens.css'
+import '@quantinuum/quantinuum-ui/tokens.css'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'

@@ -54,4 +54,4 @@ This Guppy function doesn't currently have compilation to HUGR. Please find/rais
 
 ## Why am I getting "no lowering found" errors?
 
-Though Guppy can compile your operation to HUGR, the lowering to LLVM executable code for the Selene simulator doesn't yet work. Please find a workaround or raise an issue on the [HUGR repository](https://github.com/cqcl/hugr/).
+Though Guppy can compile your operation to HUGR, the lowering to LLVM executable code for the Selene simulator doesn't yet work. Please find a workaround or raise an issue on the [HUGR repository](https://github.com/quantinuum/hugr/).
