@@ -130,7 +130,7 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "nexus": ("https://docs.quantinuum.com/nexus/", None),
     "pytket": ("https://docs.quantinuum.com/tket/api-docs/", None),
-    "hugr": ("https://cqcl.github.io/hugr/", None),
+    "hugr": ("https://quantinuum.github.io/hugr/", None),
 }
 
 intersphinx_disabled_reftypes = ["*"]
