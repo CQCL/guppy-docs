@@ -1,5 +1,5 @@
 //@ts-ignore
-import { tailwindTheme } from '@cqcl/quantinuum-ui'
+import { tailwindTheme } from '@quantinuum/quantinuum-ui'
 import path from 'path'
 import { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
@@ -23,7 +23,7 @@ export default {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     path.join(
-      path.dirname(require.resolve('@cqcl/quantinuum-ui')),
+      path.dirname(require.resolve('@quantinuum/quantinuum-ui')),
       '**/*.{js,ts,jsx,tsx,mdx}'
     ),
   ],

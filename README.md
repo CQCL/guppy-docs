@@ -7,11 +7,11 @@ This repository contains documentation for the Guppy programming language.
 * The Guppy landing page
 * The API documentation for the guppylang package
 * FAQs, changelog and migration guides
-* The guppylang [example notebooks](https://github.com/CQCL/guppylang/tree/main/examples) (included via the guppylang submodule)
+* The guppylang [example notebooks](https://github.com/quantinuum/guppylang/tree/main/examples) (included via the guppylang submodule)
 
-The Sphinx docs are written in MyST markdown and rendered with the [myst-nb](https://myst-nb.readthedocs.io/en/latest/) library. This variant of markdown supports code cells which are executed at docs build time. See the section on [text-based notebooks](https://myst-nb.readthedocs.io/en/latest/authoring/basics.html#text-based-notebooks). The docs are styled with the [quantinuum-sphinx](https://github.com/CQCL/quantinuum-sphinx) theme.
+The Sphinx docs are written in MyST markdown and rendered with the [myst-nb](https://myst-nb.readthedocs.io/en/latest/) library. This variant of markdown supports code cells which are executed at docs build time. See the section on [text-based notebooks](https://myst-nb.readthedocs.io/en/latest/authoring/basics.html#text-based-notebooks). The docs are styled with the [quantinuum-sphinx](https://github.com/quantinuum/quantinuum-sphinx) theme.
 
-For information on how the landing page is built, see the [landing page README](https://github.com/CQCL/guppy-docs/blob/main/landing/README.md).
+For information on how the landing page is built, see the [landing page README](https://github.com/quantinuum/guppy-docs/blob/main/landing/README.md).
 
 ## Updating the docs for a new Guppy release
 
@@ -38,10 +38,10 @@ Requirements:
 
 See the `devenv.nix` file.
 
-First clone the repository making sure to checkout the [guppylang](https://github.com/CQCL/guppylang) submodule.
+First clone the repository making sure to checkout the [guppylang](https://github.com/quantinuum/guppylang) submodule.
 
 ```shell
-git clone git@github.com:CQCL/guppy-docs.git --recurse-submodules
+git clone git@github.com:quantinuum/guppy-docs.git --recurse-submodules
 ```
 
 Alternatively you can update the submodules if you have already cloned the repository.

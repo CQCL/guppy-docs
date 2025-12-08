@@ -42,7 +42,7 @@ autosectionlabel_prefix_document = True
 # Sphinx autosummary
 # https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html
 
-# See https://github.com/CQCL/guppylang/pull/1028
+# See https://github.com/quantinuum/guppylang/pull/1028
 autosummary_ignore_module_all = False  # Respect __all__ if specified
 
 
@@ -81,7 +81,7 @@ nb_execution_mode = "cache"
 nb_execution_show_tb = True  # Show traceback if cell execution fails
 nb_execution_raise_on_error = True  # Cell execution failures are errors not warnings
 nb_execution_timeout = 90  # Cells which take >90s give timeout error.
-nb_merge_streams = True # Accumulates all stdout streams into one, same with stderr
+nb_merge_streams = True  # Accumulates all stdout streams into one, same with stderr
 # ----------------------
 
 
@@ -131,7 +131,7 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "nexus": ("https://docs.quantinuum.com/nexus/", None),
     "pytket": ("https://docs.quantinuum.com/tket/api-docs/", None),
-    "hugr": ("https://cqcl.github.io/hugr/", None),
+    "hugr": ("https://quantinuum.github.io/hugr/", None),
 }
 
 intersphinx_disabled_reftypes = ["*"]

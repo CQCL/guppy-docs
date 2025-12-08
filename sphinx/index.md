@@ -8,5 +8,5 @@ api/api_index.md
 guppylang/guppylang/CHANGELOG.md
 migration_guide.md
 faqs.md
-Github <https://github.com/CQCL/guppylang>
+Github <https://github.com/quantinuum/guppylang>
 ```
