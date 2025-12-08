@@ -16,6 +16,7 @@ html_copy_source = False
 
 
 html_logo = "_static/guppy_icon_only.svg"
+html_favicon = "_static/quantinuum_favicon.svg"
 
 html_static_path = ["_static"]
 templates_path = ["_templates"]
