@@ -26,7 +26,7 @@ Guppy programs can be executed on the [Selene](https://github.com/quantinuum/sel
 
 As a first example, let's write a Guppy program to implement a simple quantum circuit.
 This circuit is deliberately designed to involve some classical control based on measurement outcomes:
-TODO add the circuit
+![circuit](./_static/getting_started_circuit.png)
 
 You can see the intermediate states of the qubits as the circuit progresses annotated on the dashed lines.
 Try to reason along!
