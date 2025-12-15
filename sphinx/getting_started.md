@@ -16,7 +16,7 @@ Guppy is installed as the [guppylang](https://pypi.org/project/guppylang/) Pytho
 pip install guppylang
 ```
 
-Guppy can be used with Python versions 3.10, 3.11, 3.12 and 3.13. The MacOS, Linux and Windows operating systems are supported.
+Guppy can be used with Python versions 3.10, 3.11, 3.12, 3.13 and 3.14. The MacOS, Linux and Windows operating systems are supported.
 
 The source code for Guppy can be found in a public repository on [GitHub](https://github.com/quantinuum/guppylang). If you have a feature request or think you have found a bug, feel free to raise a [GitHub issue](https://github.com/quantinuum/guppylang/issues).
 
