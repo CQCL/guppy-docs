@@ -91,8 +91,10 @@ shots = evaluate.emulator(n_qubits=2).with_seed(0).with_shots(10000).run()
 fig, ax = plt.subplots(1, 1)
 possible_outcomes = ["00", "01", "10", "11"]
 idx = np.asarray(list(range(len(possible_outcomes))))
+counts = [len([1 for shot in shots if str(shot.as_dict()['q1']) + str(shot.as_dict()['q2']) == o]) for o in possible_outcomes]
 
-ax.bar(idx, [len([1 for shot in shots if str(shot.as_dict()['q1']) + str(shot.as_dict()['q2']) == o]) for o in possible_outcomes])
+bars = ax.bar(idx, counts)
+ax.bar_label(bars, labels=counts)
 
 ax.set_title("Circuit simulation")
 ax.set_xlabel("Measurement outcomes")
