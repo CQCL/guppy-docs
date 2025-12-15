@@ -16,9 +16,10 @@ For information on how the landing page is built, see the [landing page README](
 ## Updating the docs for a new Guppy release
 
 1. Update the `pyproject.toml` in this repository, run `uv sync` to update `uv.lock`.
-2. Run `just coverage` to check the API docs coverage. Document any undocumented classes or functions. 
-3. Bump the `guppylang` submodule in this repository to the latest release tag (this submodule is only used for example notebooks and changelog).
-4. Create a release from this repository. The docs website will deploy the content corresponding to the latest release tag from this repository.
+2. Bump the `guppylang` submodule in this repository to the latest release tag (this submodule is only used for example notebooks and changelog).
+3. Create a release from this repository. The docs website will deploy the content corresponding to the latest release tag from this repository.
+
+Note that there are some known issues with the `just coverage` check which need to be resolved before the check is reliable.
 
 ## Testing in C.I.
 
