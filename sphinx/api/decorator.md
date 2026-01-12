@@ -4,9 +4,23 @@
 ```{eval-rst}
 .. currentmodule:: guppylang.decorator
 
-.. decorator:: guppy
+.. decorator:: guppy (*, unitary=False, control=False, dagger=False, power=False, max_qubits=None)
 
-   Registers a function for Guppy compilation.
+   Registers a function for Guppy compilation. This is the main decorator that applies to most use cases / functions
+   written in Guppy. 
+   
+   :keyword unitary: Convenience argument that when set to `True`, sets `control=True`, `dagger=True`, and `power=True`.
+   :type unitary: python:bool
+   :keyword control: Marks a function as being controllable, similar to how a `NOT` gate is controllable to form a `CNOT`, etc.
+   :type control: python:bool
+   :keyword dagger: Marks a function as having an auto-inferable adjoint.
+   :type dagger: python:bool
+   :keyword power: Marks a function as having an auto-inferable power operation, that applies the function repeatedly.
+   :type power: python:bool
+   :keyword max_qubits: Hints the maximum number of qubits that this function uses. When used on the entrypoint function,
+     allows to omit the `n_qubits` parameter when calling :func:`~guppylang.defs.GuppyFunctionDefinition.emulator`.
+   :type max_qubits: python:int | None
+   :rtype: GuppyFunctionDefinition
 
    .. code-block:: python
 
